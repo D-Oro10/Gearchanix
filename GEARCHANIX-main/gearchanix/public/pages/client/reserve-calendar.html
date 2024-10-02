@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        
+        <!--Links-->
+        <link rel="stylesheet" href="/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
+        <link rel="stylesheet" href="/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+        <title>Reservation Calendar</title>
+    </head>
+
+    <body id="#page-top">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-expand-lg navbar-custom shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand d-flex align-items-center" href="#">
+                            <img src="/GEARCHANIX-MAIN/gearchanix/src/assets/img/PUPLogo.png" alt="PUP Logo">
+                            <div class="ms-3">
+                                <span class="d-block univ-name">Polytechnic University of the Philippines</span>
+                                <span class="d-block sub-text">The Country's 1st PolytechnicU</span>
+                            </div>
+                        </a>
+                    </div>
+                </nav>
+    
+                <!--Main Page-->
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Reservation Calendar</h3>
+                    </div>
+
+                    <!--Calendar-->
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Calendar</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="client-calendar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!--Available Date-->
+            <div class="modal fade" id="availableModal" tabindex="-1" aria-labelledby="availableModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="availableModalLabel">Date Available</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            The date is available for reservation. Would you like to proceed?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <a href="#" class="btn btn-primary" id="proceedButton">Proceed</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unavailable Date-->
+            <div class="modal fade" id="unavailableModal" tabindex="-1" aria-labelledby="unavailableModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="unavailableModalLabel">Date Unavailable</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Sorry, the date is unavailable for reservation. Please choose another date. Thank you!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Gearchanix 2024</span></div>
+                </div>
+            </footer>
+        </div>
+
+        <!--Scripts-->
+        <script src="/GEARCHANIX-main/gearchanix/src/assets/js/script.js"></script>
+        <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
+        <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/theme.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    </body>
+</html>
