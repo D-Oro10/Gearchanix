@@ -5,3 +5,5 @@
 - lagyan na ng name (first name, last name or just name)
 3. Pwede kaya drop down ang gas consumption? pero kasi connected siya sa vehicle trip ticket. Or di kaya, pwede na siya isama sa trip ticket tapos sa export na lang pwedeng pumili ng i-export?
 - isama na lang ang gas consumption sa trip ticket, tapos sa data analysis na lang siya kukunin
+
+"C:\XAMP\htdocs\Gearchanix\GEARCHANIX-main\gearchanix\public\pages\supervisor"

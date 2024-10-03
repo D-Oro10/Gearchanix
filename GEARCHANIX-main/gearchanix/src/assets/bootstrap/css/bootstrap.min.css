@@ -10860,6 +10860,8 @@ a:focus {
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:active {
   color: #858796;
 }
+
+/*Dropdown*/
 .dropdown {
   position: static;
 }
@@ -10929,8 +10931,10 @@ a:focus {
     max-width: 13.375rem;
   }
 }
+
+/*Sidebar width and height*/
 .sidebar {
-  width: 6.5rem;
+  width: 8rem;
   min-height: 100vh;
 }
 .sidebar .nav-item {
@@ -10952,7 +10956,7 @@ a:focus {
   font-size: 1rem;
 }
 .sidebar .nav-item .nav-link.active {
-  font-weight: 700;
+  font-weight: 100;
 }
 .sidebar .nav-item .collapse {
   position: absolute;
@@ -11006,7 +11010,7 @@ a:focus {
 .sidebar .nav-item .collapse .collapse-inner .collapse-item.active,
 .sidebar .nav-item .collapsing .collapse-inner .collapse-item.active {
   color: #9E0F12;
-  font-weight: 700;
+  font-weight: 100;
 }
 .sidebar #sidebarToggle {
   width: 2.5rem;
@@ -11064,7 +11068,7 @@ a:focus {
 }
 @media (min-width: 768px) {
   .sidebar {
-    width: 14rem !important;
+    width: 16rem !important;
   }
   .sidebar .nav-item .collapse {
     position: relative;
@@ -11895,3 +11899,23 @@ h5 {
   color: var(--bs-primary);
 }
 
+.collapse-inner {
+  background: linear-gradient(rgb(162,25,28) 0%, #9e0f12 99%, #ffffff 100%);
+}
+
+#accordionSidebar .collapse-inner .collapse-item {
+  color: #fff !important; 
+}
+
+#accordionSidebar .collapse-inner .collapse-item i {
+  color: #fff !important; 
+}
+
+#accordionSidebar .collapse-inner .collapse-item:hover {
+  background-color: #7d0c10;
+  color: #fff !important; 
+}
+
+#accordionSidebar .collapse-inner .collapse-item:hover i {
+  color: #fff !important; 
+}
