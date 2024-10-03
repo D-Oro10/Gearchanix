@@ -23,7 +23,18 @@
                     <hr class="sidebar-divider my-0">
                     <ul class="navbar-nav text-light" id="accordionSidebar">
                         <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/supervisor.html"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
-                        <li class="nav-item"><a class="nav-link active" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/roles/roles.html"><i class="fas fa-user-tie"></i><span>ROLES</span></a></li>
+                        <!--Roles Drop Down-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRoles" aria-expanded="false" aria-controls="collapseRoles">
+                                <i class="fas fa-user-circle"></i><span>ROLES</span>
+                            </a>
+                            <div id="collapseRoles" class="collapse" aria-labelledby="headingRoles" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item active" href="/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/roles/adminlist.html">ADMIN LIST</a>
+                                    <a class="collapse-item" href="/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/roles/driverslist.html">DRIVER LIST</a>
+                                </div>
+                            </div>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/vehicles/vehiclelist.html"><i class="fas fa-car"></i><span>VEHICLES</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/milatest.html"><i class="fas fa-tools"></i><span>MAINTENANCE</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/documents/documents.html"><i class="fas fa-book-open"></i><span>DOCUMENTS</span></a></li>

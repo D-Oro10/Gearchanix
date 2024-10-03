@@ -23,9 +23,44 @@
                     <hr class="sidebar-divider my-0">
                     <ul class="navbar-nav text-light" id="accordionSidebar">
                         <li class="nav-item"><a class="nav-link active" href="supervisor.html"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/roles/roles.html"><i class="fas fa-user-tie"></i><span>ROLES</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/vehicles/vehiclelist.html"><i class="fas fa-car"></i><span>VEHICLES</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/milatest.html"><i class="fas fa-tools"></i><span>MAINTENANCE</span></a></li>
+                        <!--Roles Drop Down-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRoles" aria-expanded="false" aria-controls="collapseRoles">
+                                <i class="fas fa-user-circle"></i><span>ROLES</span>
+                            </a>
+                            <div id="collapseRoles" class="collapse" aria-labelledby="headingRoles" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/roles/admin-list.html">ADMIN LIST</a>
+                                    <a class="collapse-item" href="/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/roles/drivers-list.html">DRIVER LIST</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--Vehicle Drop Down-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseVehicles" aria-expanded="false" aria-controls="collapseVehicles">
+                                <i class="fas fa-user-circle"></i><span>VEHICLES</span>
+                            </a>
+                            <div id="collapseVehicles" class="collapse" aria-labelledby="headingRoles" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/vehicles/vehicle-list.html">VEHICLE LIST</a>
+                                    <a class="collapse-item" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/vehicles/vehicle-history.html">VEHICLE HISTORY</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--Maintenance Drop Down-->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMaintenance" aria-expanded="false" aria-controls="collapseMaintenance">
+                                <i class="fas fa-user-circle"></i><span>MAINTENANCE</span>
+                            </a>
+                            <div id="collapseMaintenance" class="collapse" aria-labelledby="headingRoles" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="#">INSPECTION</a>
+                                    <a class="collapse-item" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/service.html">SERVICE</a>
+                                    <a class="collapse-item" href="/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/vehicles/vehiclelist.html">MAINTENANCE REQUEST</a>
+                                    <a class="collapse-item" href="/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/vehicles/vhtripticket.html">SERVICE MAINTENANCE</a>
+                                </div>
+                            </div>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/documents/documents.html"><i class="fas fa-book-open"></i><span>DOCUMENTS</span></a></li>
                     </ul>
                     <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
