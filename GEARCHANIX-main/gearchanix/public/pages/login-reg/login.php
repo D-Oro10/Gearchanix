@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Redirect based on the user role
         switch ($user['user_role']) {
             case 'DISPATCHER':
-                header('Location: /GEARCHANIX-MAIN/gearchanix/src/pages/dispatcher/dispatcher.html');
+                header('Location: /Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/dispatcher.html');
                 break;
             case 'CHIEF-TMPS':
                 header('Location: /GEARCHANIX-MAIN/gearchanix/src/pages/chief_dashboard.html');
@@ -50,12 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
             default:
                 // Redirect to a generic page if no specific role is found
-                header('Location: /GEARCHANIX-MAIN/gearchanix/src/pages/login-reg/login.html');
+                echo "<script>alert('No Role Assigned Yet');</script>";
+                header('Location: /Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/login-reg/login.html');
                 break;
         }
         exit;
+
     } else {
+        // If Invalid login credentials 
         echo "<script>alert('Invalid login credentials');</script>";
+        header('Location: /Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/login-reg/login.html');
+        exit;  
     }
 }
 ?>

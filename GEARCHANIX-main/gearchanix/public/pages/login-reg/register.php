@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt_role->execute()) {
                     echo '<script>
                             alert("Registration successful!");
-                            window.location.href = "/GEARCHANIX-MAIN/gearchanix/src/pages/login-reg/login.html";
+                            window.location.href = "/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/login-reg/login.html";
                           </script>';
                 } else {
                     echo '<script>alert("Error inserting into roles table: ' . $stmt_role->error . '");</script>';

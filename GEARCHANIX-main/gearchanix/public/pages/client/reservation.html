@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         
         <!-- Links -->
-        <link rel="stylesheet" href="/GEARCHANIX-main/gearchanix/src/assets/css/styles.css">
-        <link rel="stylesheet" href="/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/css/styles.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
         <title>Vehicle Reservation Form</title>
@@ -18,7 +18,7 @@
                 <nav class="navbar navbar-expand-lg navbar-custom shadow mb-4 topbar static-top">
                     <div class="container-fluid">
                         <a class="navbar-brand d-flex align-items-center" href="#">
-                            <img src="/GEARCHANIX-MAIN/gearchanix/src/assets/img/PUPLogo.png" alt="PUP Logo">
+                            <img src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/img/PUPLogo.png" alt="PUP Logo">
                             <div class="ms-3">
                                 <span class="d-block univ-name">Polytechnic University of the Philippines</span>
                                 <span class="d-block sub-text">The Country's 1st PolytechnicU</span>
@@ -168,9 +168,50 @@
         </div>
 
         <!-- Scripts -->
-        <script src="/GEARCHANIX-main/gearchanix/src/assets/js/script.js"></script>
-        <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
-        <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/theme.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Function to get query parameters from URL
+                function getQueryParam(param) {
+                    let urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(param);
+                }
+        
+                let selectedDate = getQueryParam('selected_date');
+        
+                if (selectedDate) {
+                    document.getElementById('scheduled_date').value = selectedDate;
+                }
+            });
+        
+            document.getElementById('reservationForm').addEventListener('submit', function (event) {
+                event.preventDefault(); 
+        
+    
+                var formData = new FormData(this);
+        
+                fetch('process_reservation.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(result => {
+                    if (result.includes("Reservation successful")) {
+                        var successModal = new bootstrap.Modal(document.getElementById('reservationSuccessModal'));
+                        successModal.show();
+        
+                        // Redirect to homepage after a delay
+                        document.querySelector('.modal-footer .btn-secondary').addEventListener('click', function() {
+                        window.location.href = '/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/hompage/homepage.html';
+                    });
+                    } else {
+                        alert(result); // Show error message if any
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        </script>
+        <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/theme.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

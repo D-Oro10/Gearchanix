@@ -79,6 +79,7 @@ $(document).ready(function() {
 });
 
 
+
 //Reservation confirmation
 document.getElementById('confirmSubmit').addEventListener('click', function() {
     document.getElementById('reservationForm').submit();
@@ -116,7 +117,7 @@ document.getElementById('reservationForm').addEventListener('submit', function (
 
             // Redirect to homepage after a delay
             document.querySelector('.modal-footer .btn-secondary').addEventListener('click', function() {
-            window.location.href = '/GEARCHANIX-MAIN/gearchanix/src/pages/hompage/homepage.html';
+            window.location.href = '//GEARCHANIX-MAIN/gearchanix/src/pages/hompage/homepage.html';
         });
         } else {
             alert(result); // Show error message if any
@@ -125,42 +126,6 @@ document.getElementById('reservationForm').addEventListener('submit', function (
     .catch(error => console.error('Error:', error));
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('client-calendar');
-    
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        dateClick: function(info) {
-            var selectedDate = info.dateStr; // Format: 'YYYY-MM-DD'
-            
-            // Check if the date is available
-            if (isAvailable(selectedDate)) {
-                document.getElementById('proceedButton').href = '/GEARCHANIX-MAIN/gearchanix/src/pages/client/reservation.html?selected_date=' + selectedDate;
-                var availableModal = new bootstrap.Modal(document.getElementById('availableModal'));
-                availableModal.show();
-            } else {
-                var unavailableModal = new bootstrap.Modal(document.getElementById('unavailableModal'));
-                unavailableModal.show();
-            }
-        }
-    });
-    
-    calendar.render();
-
-    // Function to determine if the selected date is available
-    function isAvailable(dateStr) {
-        var selectedDate = new Date(dateStr);
-        var currentDate = new Date();
-        // Check if selected date is a past date
-        if (selectedDate < currentDate.setHours(0,0,0,0)) {
-            return false;
-        }
-        
-        // For weekends only
-        var day = selectedDate.getDay();
-        return day !== 0 && day !== 6;
-    }
-});
 
 document.getElementById('reservationForm').addEventListener('submit', function (event) {
     event.preventDefault(); 

@@ -1,6 +1,6 @@
 // adding new reservations
 document.getElementById("addBtn").addEventListener("click", function() {
-    window.location.href = "/GEARCHANIX-MAIN/gearchanix/src/pages/dispatcher/addreservation.html";
+    window.location.href = "/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/addreservation.html";
 });
 
 // Fetch reservation data and populate the table

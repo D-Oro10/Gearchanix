@@ -1,6 +1,6 @@
 // adding new reservations
 document.getElementById("addBtn").addEventListener("click", function() {
-    window.location.href = "/GEARCHANIX-MAIN/gearchanix/src/pages/dispatcher/addreservation.html";
+    window.location.href = "/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/addreservation.html";
 });
 // Fetch reservation data and populate the table
 function loadReservations() {
@@ -52,9 +52,8 @@ function loadReservations() {
         .catch(error => console.error('Error fetching data:', error));
 }
 
-// Function to update reservation status
+
 function updateReservationStatus(reservationID, status) {
-    // Send a POST request to the PHP backend
     fetch('update_reservation_status.php', {
         method: 'POST',
         headers: {
@@ -65,21 +64,29 @@ function updateReservationStatus(reservationID, status) {
             reservation_status: status,
         }),
     })
-    .then(response => response.json()) // Parse the JSON response
-    .then(data => {
-        if (data.success) {
-            // Successfully updated
-            alert(`Reservation status updated to: ${status}`);
-            console.log(data.message);
-            // Optionally, you can refresh the table or the row to reflect the updated status
-        } else {
-            // If the update fails, show an error message
-            alert(`Error: ${data.message}`);
-            console.error(data.message);
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text(); // Get the raw response as text
+    })
+    .then(rawData => {
+        console.log('Raw response:', rawData); // Log the raw response for debugging
+        try {
+            const data = JSON.parse(rawData); // Try to parse the JSON response
+            if (data.success) {
+                alert(`Reservation status updated to: ${status}`);
+                console.log(data.message);
+            } else {
+                alert(`Error: ${data.message}`);
+                console.error(data.message);
+            }
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+            alert('Failed to update reservation status due to JSON parsing error.');
         }
     })
     .catch(error => {
-        // Catch and log any network or other fetch-related errors
         alert('Failed to update reservation status. Please try again.');
         console.error('Error:', error);
     });
@@ -176,14 +183,33 @@ document.getElementById("editReservationForm").addEventListener("submit", functi
     .then(response => response.json())
     .then(result => {
         if (result.success) {
-            alert('Reservation updated successfully.');
-            window.location.reload(); // Reload the page to see changes
+            // Hide the edit modal
+            const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+            editModal.hide(); // Hide the edit modal
+
+            // Show the edit success modal
+            const successModal = new bootstrap.Modal(document.getElementById('editSuccessModal'));
+            successModal.show();
+
+            // Optional: Reload the reservations or update the UI as needed
+            loadReservations(); // Call this function if you have it to refresh the reservation list
         } else {
-            alert('Error updating reservation: ' + result.message);
+            // Show an error modal or an alert with the error message
+            const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+            document.getElementById('errorModalMessage').innerText = 'Error updating reservation: ' + result.message;
+            errorModal.show();
         }
     })
-    .catch(error => console.error('Error updating reservation:', error));
+    .catch(error => {
+        console.error('Error updating reservation:', error);
+        // Show an error modal for catch block as well
+        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        document.getElementById('errorModalMessage').innerText = 'Error updating reservation: ' + error.message;
+        errorModal.show();
+    });
 });
+
+
 
 
 // Search function
