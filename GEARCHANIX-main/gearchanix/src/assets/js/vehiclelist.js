@@ -21,8 +21,8 @@ function loadVehicles() {
                     <td>${vehicle.pms_date || 'N/A'}</td> 
                     <td>${vehicle.vehicle_remarks || ''}</td>
                     <td>
-                        <button class="btn btn-danger" onclick="confirmDelete(${vehicle.vehicle_ID})">Delete</button>
                         <button class="btn btn-primary" onclick="editVehicle(${vehicle.vehicle_ID})">Edit</button>
+                        <button class="btn btn-danger" onclick="confirmDelete(${vehicle.vehicle_ID})">Delete</button> 
                     </td>
                 `;
 

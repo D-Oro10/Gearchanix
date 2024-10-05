@@ -40,8 +40,10 @@ function loadReservations() {
                         <td>${row.purpose}</td>
                         <td>${manifestDownload}</td>
                         <td>
-                           <button class="delete-btn" onclick="confirmDelete(${row.reservation_ID})">Delete</button>
-                           <button class="edit-btn" onclick="editReservation(${row.reservation_ID})">Edit</button>
+
+                           <button class="btn btn-danger" onclick="editReservation(${row.reservation_ID})">Edit</button>
+                           <button class="btn btn-primary" onclick="confirmDelete(${row.reservation_ID})">Delete</button>
+                           
                         </td>
                     </tr>
                 `;
@@ -232,3 +234,5 @@ function searchFunction() {
 
 
 window.onload = loadReservations;
+
+
