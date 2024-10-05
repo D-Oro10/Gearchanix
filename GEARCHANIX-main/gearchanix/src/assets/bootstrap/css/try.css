@@ -1,0 +1,85 @@
+/* Default collapsed sidebar */
+.sidebar {
+    width: 60px !important; /* Ensure the sidebar is collapsed by default */
+    transition: width 0.3s ease !important;
+}
+
+/* Sidebar on hover */
+.sidebar:hover {
+    width: 250px !important; /* Ensure the sidebar expands on hover */
+}
+
+/* Hide text on collapsed sidebar */
+.sidebar .nav-item .nav-link span {
+    display: none !important; /* Hide the text */
+    transition: display 0.3s ease !important;
+}
+
+/* Show text when sidebar is hovered */
+.sidebar:hover .nav-item .nav-link span {
+    display: inline !important; /* Show the text when hovered */
+}
+
+/* Additional styling for visual clarity */
+.sidebar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide text and reduce logo size when collapsed */
+.sidebar .sidebar-brand img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+/* Hide GEARCHANIX text */
+.sidebar .sidebar-brand-text {
+    display: none !important;
+    transition: display 0.3s ease;
+}
+
+/* On hover, restore logo size and show GEARCHANIX text */
+.sidebar:hover .sidebar-brand img {
+    width: 60px;
+    height: 48px;
+}
+
+.sidebar:hover .sidebar-brand-text {
+    display: inline !important;
+}
+
+/* General scroll for the entire page */
+body {
+    overflow-y: auto;
+}
+
+/* Separate scroll for the dashboard content */
+.scrollable-container {
+    height: calc(100vh - 120px); /* Adjust height relative to viewport, minus space for the navbar */
+    overflow-y: auto; /* Enable scrolling for the dashboard section */
+    padding: 20px;
+}
+
+/* Optional: Style the scrollbar if needed */
+.scrollable-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-containerer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: #555 !important;
+    color: white;
+    font-size: 14px;
+}
+.footer .social-links a {
+    text-decoration: none;
+    font-size: 18px;
+}
+.footer .social-links a:hover {
+    color: #ddd;
+}
