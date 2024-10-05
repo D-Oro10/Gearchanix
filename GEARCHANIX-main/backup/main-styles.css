@@ -1,0 +1,104 @@
+.navbar {
+    background-color: #343a40; /* Bootstrap's navbar-dark background */
+}
+
+.navbar-nav {
+    padding-left: 0; /* Remove left padding */
+}
+
+.nav-item {
+    list-style: none; /* Remove default list styles */
+}
+
+.nav-link {
+    display: flex; /* Flex display for links */
+    align-items: center; /* Center items vertically */
+    padding: 10px 15px; /* Padding for links */
+    color: #ffffff; /* White text for links */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.2s; /* Smooth background change */
+}
+
+.nav-link:hover {
+    background-color: #575757; /* Background color on hover */
+}
+
+.sidebar {
+    width: 250px; /* Width for the sidebar */
+    position: fixed; /* Fixed positioning for sidebar */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Scroll if content overflows */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.sidebar-dark .sidebar-brand {
+    color: #ffffff; /* White text for brand */
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding: 15px; /* Padding around brand */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.sidebar-brand-icon {
+    width: 30px; /* Width for the brand icon */
+    height: 30px; /* Height for the brand icon */
+    background-color: #007bff; /* Example icon background */
+    margin-right: 10px; /* Space between icon and text */
+    border-radius: 50%; /* Rounded icon */
+}
+
+.sidebar-brand-text {
+    font-size: 1.2rem; /* Font size for brand text */
+}
+
+.sidebar-brand-text span {
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.sidebar-divider {
+    border-top: 1px solid #e3e6f0; /* Divider color */
+    margin: 10px 0; /* Margin for divider */
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(180deg, #007bff 10%, #6c757d 100%); /* Example gradient */
+}
+
+.accordion {
+    /* Add any accordion specific styles if needed */
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+.collapse-item {
+    padding: 10px 15px; /* Padding for collapse items */
+    color: #000; /* Black text for collapse items */
+    text-decoration: none; /* Remove underline */
+}
+
+.collapse-item:hover {
+    background-color: #f8f9fa; /* Background color on hover for collapse items */
+}
+
+/* Active item styling */
+.collapse-item.active {
+    font-weight: bold; /* Bold active item */
+    color: #007bff; /* Highlight active item */
+}
+
+.d-flex {
+    
+}
+
+
+

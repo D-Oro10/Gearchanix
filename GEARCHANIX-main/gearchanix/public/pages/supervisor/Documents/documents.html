@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         
         <!--Links-->
-        <link rel="stylesheet" href="/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
-        <link rel="stylesheet" href="/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
         <title>Documents</title>
@@ -17,16 +17,47 @@
             <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: linear-gradient(rgb(162,25,28) 0%, #9e0f12 99%, #ffffff 100%), var(--bs-red);">
                 <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                         <div class="sidebar-brand-icon rotate-n-15"></div>
-                        <picture><img style="margin-left: 1px;margin-right: -11px;padding-right: 11px;padding-top: 0px;padding-bottom: 0px;margin-bottom: 0px;" width="60" height="48" src="/GEARCHANIX-main/gearchanix/src/assets/img/PUPLogo.png"></picture>
+                        <picture><img style="margin-left: 1px;margin-right: -11px;padding-right: 11px;padding-top: 0px;padding-bottom: 0px;margin-bottom: 0px;" width="60" height="48" src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/img/PUPLogo.png"></picture>
                         <div class="sidebar-brand-text mx-3"><span>GEARCHANIX</span></div>
                     </a>
                     <hr class="sidebar-divider my-0">
                     <ul class="navbar-nav text-light" id="accordionSidebar">
-                        <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/supervisor.html"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/roles/roles.html"><i class="fas fa-user-tie"></i><span>ROLES</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/vehicles/vehiclelist.html"><i class="fas fa-car"></i><span>VEHICLES</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/milatest.html"><i class="fas fa-tools"></i><span>MAINTENANCE</span></a></li>
-                        <li class="nav-item"><a class="nav-link active" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/documents/documents.html"><i class="fas fa-book-open"></i><span>DOCUMENTS</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/supervisor.html"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                        <!-- Roles Drop Down -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRoles" aria-expanded="false" aria-controls="collapseRoles"><i class="fas fa-user-tie"></i><span>ROLES</span></a>
+                            <div id="collapseRoles" class="collapse" aria-labelledby="headingRoles" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/roles/admin-list.html"><i class="fas fa-user-circle"></i> ADMIN LIST</a>
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/roles/drivers-list.html"><i class="fas fa-car"></i> DRIVER LIST</a>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <!-- Vehicle Drop Down -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseVehicles" aria-expanded="false" aria-controls="collapseVehicles"><i class="fas fa-car"></i><span>VEHICLES</span></a>
+                            <div id="collapseVehicles" class="collapse" aria-labelledby="headingVehicles" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/supervisor/vehicles/vehicle-list.html"><i class="fas fa-list"></i> VEHICLE LIST</a>
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/vehicles/vehicle-history.html"><i class="fas fa-history"></i> VEHICLE HISTORY</a>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <!-- Maintenance Drop Down -->
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMaintenance" aria-expanded="false" aria-controls="collapseMaintenance"><i class="fas fa-tools"></i><span>MAINTENANCE</span></a>
+                            <div id="collapseMaintenance" class="collapse" aria-labelledby="headingMaintenance" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/inspection.html"><i class="fas fa-check-circle"></i> INSPECTION</a>
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/service.html"><i class="fas fa-wrench"></i> SERVICE</a>
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/maintenance-request.html"><i class="fas fa-clipboard-list"></i> MAINTENANCE REQUEST</a>
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/service-maintenance.html"><i class="fas fa-hammer"></i> SERVICE MAINTENANCE</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/documents/documents.html"><i class="fas fa-book-open"></i><span>DOCUMENTS</span></a></li>
                     </ul>
                     <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                 </div>
@@ -146,9 +177,9 @@
         </div>
         
         <!--Scripts-->
-        <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/script.js"></script>
-        <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
-        <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/theme.js"></script>     
+        <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/script.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/theme.js"></script>     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
