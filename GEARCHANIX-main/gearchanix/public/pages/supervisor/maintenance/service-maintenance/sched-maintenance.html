@@ -7,10 +7,9 @@
         <!--Links-->
         <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
         <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/css/buttons.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
-        <title>Service Maintenance</title>
+        <title>Schedule Maintenance</title>
     </head>
 
     <body id="page-top">
@@ -65,7 +64,8 @@
             </nav>
             <!--Content Wrapper-->
             <div class="d-flex flex-column" id="content-wrapper">
-                <div class="shadow-lg" id="content">
+                <!--Scrollable Content-->
+                <div id="content">
                     <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                         <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-file-export"></i></button>
                             <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -81,6 +81,7 @@
                                         </form>
                                     </div>
                                 </li>
+                                <!--Notifications-->
                                 <li class="nav-item dropdown no-arrow mx-1">
                                     <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter"></span><i class="fas fa-bell fa-fw" style="font-size: 17px;"></i></a>
                                         <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
@@ -120,15 +121,78 @@
                             </ul>
                         </div>
                     </nav>
-                    <!--Boxes-->
-                    <div class="container-fluid">
-                        <div class="card shadow">
-                            <div class="btn-group btn-group-lg border-light shadow button-group">
-                                <a href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/service-maintenance/sched-maintenance.html" class="btn btn-primary btn-sched-maintenance border-light" data-aos="fade-up" data-aos-delay="150">SCHEDULE MAINTENANCE</a>
-                                <a href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/supervisor/maintenance/service-maintenance/work-order.html" class="btn btn-primary btn-work-order border-light" data-aos="fade-up" data-aos-delay="150">WORK ORDER</a>
+                    <!--Scrollable Container-->
+                    <div class="scrollable-container">
+                        <div class="container-fluid">
+                            <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                                <h3 class="text-dark mb-0">Schedule Maintenance List</h3>
+                            </div>
+                            <div class="row align-items-center">
+                                <!-- Search bar -->
+                                <div class="col d-flex justify-content-center">
+                                    <form class="navbar-search">
+                                        <div class="input-group">
+                                            <input class="bg-light form-control border-0 small" type="text" id="searchInput" placeholder="Search" onkeyup="searchFunction()">
+                                            <button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Export and action buttons -->
+                                <div class="col-auto d-flex align-items-center justify-content-end">
+                                    <button class="btn btn-light btn-sm mx-1" id="addBtn" title="Add"><i class="fas fa-plus"></i></button>
+                                    <!-- <button class="btn btn-light btn-sm mx-1" id="editBtn" title="Edit" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-light btn-sm mx-1" id="deleteBtn" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fas fa-trash"></i></button> -->
+                                    <a class="btn btn-primary btn-sm ms-3" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
+                                </div>
+                            </div>
+                            <!--Schedule Maintenance List Table-->
+                            <div class="card shadow" style="margin-top: 30px">
+                                <div class="card-header py-3">
+                                    <p class="text-primary m-0 fw-bold">Schedule Maintenance List Info</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table mt-2" id="dataTable">
+                                        <table class="table my-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>PMS List</th>
+                                                    <th>Vehicle Name</th>
+                                                    <th>Vehicle Model</th>
+                                                    <th>Plate Number</th>
+                                                    <th>Acquisition Date</th>
+                                                    <th>PMS Date</th>
+                                                    <th>Work Order #</th>
+                                                    <th>Parts to be Replaced</th>
+                                                    <th>Service Task</th>
+                                                </tr>
+                                            </thead>
+                                        <tbody id="sched-maintenance-data">
+                                            
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                                <div class="card-body shadow-sm" style="text-align: center;display: inline-block;overflow: visible;--bs-danger: #9E0F12;--bs-danger-rgb: 158,15,18;">
+                                    <div class="row">
+                                        <div class="col-md-6 align-self-center">
+                                            <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite"></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                <ul class="pagination">
+                                                    <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
                 <footer class="footer bg-dark text-white mt-auto py-3" style="background-color: #555;">
@@ -146,7 +210,7 @@
                 </footer>
             </div>
         </div>
-
+        
         <!--Scripts-->
         <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/script.js"></script>
         <script src="/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
