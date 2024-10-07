@@ -1,6 +1,6 @@
 /*Vehicle History buttons*/
 .btn-pdi, .btn-pms, .btn-ems, .btn-trip {
-    width: 180px;
+    width: 50px;
     height: 180px;
     margin: 30px;
     border-radius: 15px !important;
@@ -23,6 +23,26 @@
 .btn-trip {
     background: #279DC3;
 }
+
+.btn-latest-inspection, .btn-trip-ticket {
+    width: 50px;
+    height: 180px;
+    margin: 30px;
+    border-radius: 15px !important;
+    font-size: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-latest-inspection {
+    background: #33AB15;
+}
+
+.btn-trip-ticket {
+    background: #9E0F12;
+}
+
 
 
 
