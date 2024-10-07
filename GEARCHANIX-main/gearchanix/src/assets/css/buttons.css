@@ -1,0 +1,31 @@
+/*Vehicle History buttons*/
+.btn-pdi, .btn-pms, .btn-ems, .btn-trip {
+    width: 180px;
+    height: 180px;
+    margin: 30px;
+    border-radius: 15px !important;
+    font-size: 40px;
+}
+
+/*PDI Colors*/
+.btn-pdi {
+    background: #33AB15;
+}
+
+.btn-pms {
+    background: #CEE927;
+}
+
+.btn-ems {
+    background: #9E0F12;
+}
+
+.btn-trip {
+    background: #279DC3;
+}
+
+
+
+
+
+

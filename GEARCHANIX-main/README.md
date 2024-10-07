@@ -7,3 +7,6 @@
 - isama na lang ang gas consumption sa trip ticket, tapos sa data analysis na lang siya kukunin
 
 "C:\XAMP\htdocs\Gearchanix\GEARCHANIX-main\gearchanix\public\pages\supervisor"
+<td><button class="btn btn-primary" type="button" style="margin-left: 3px;margin-right: 3px;">Edit</button><button class="btn btn-danger" type="button" style="margin-left: 3px;margin-right: 3px;">Delete</button></td>
+
+- yung vehicle trip ticket sa supervisor, kunin na lang yung gui sa dispatcher
