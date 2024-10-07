@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
-        <title>Service Task</title>
+        <title>Latest Trip Ticket</title>
     </head>
 
     <body id="page-top">
@@ -125,7 +125,7 @@
                     <div class="scrollable-container">
                         <div class="container-fluid">
                             <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                                <h3 class="text-dark mb-0">Service Task List</h3>
+                                <h3 class="text-dark mb-0">Latest Trip Ticket List</h3>
                             </div>
                             <div class="row align-items-center">
                                 <!-- Search bar -->
@@ -145,25 +145,31 @@
                                     <a class="btn btn-primary btn-sm ms-3" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
                                 </div>
                             </div>
-                            <!--Service Task List Table-->
+                            <!--Latest Trip Ticket List Table-->
                             <div class="card shadow" style="margin-top: 30px">
                                 <div class="card-header py-3">
-                                    <p class="text-primary m-0 fw-bold">Service Task List Info</p>
+                                    <p class="text-primary m-0 fw-bold">Latest Trip Ticket List Info</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive table mt-2" id="dataTable">
                                         <table class="table my-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Task Name</th>
-                                                    <th>Description</th>
-                                                    <th>Frequency</th>
-                                                    <th>MTBF</th>
-                                                    <th>Parts Involved</th>
-                                                    <th>Action</th>
+                                                    <th>Date</th>
+                                                    <th>Vehicle</th>
+                                                    <th>Driver</th>
+                                                    <th>Purpose</th>
+                                                    <th>Scheduled Date</th>
+                                                    <th>Destination</th>
+                                                    <th>Requested By</th>
+                                                    <th>Gas Tank</th>
+                                                    <th>Purchased Gas</th>
+                                                    <th>Total Gas</th>
+                                                    <th>Odometer Reading</th>
+                                                    <th>Oil Used</th>
                                                 </tr>
                                             </thead>
-                                        <tbody id="service-task-list-data">
+                                        <tbody id="latest-tripticket-list-data">
                                             
                                         </tbody>
                                     </table>
@@ -187,7 +193,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
                     </div>
                 </div>

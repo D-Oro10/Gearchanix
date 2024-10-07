@@ -10,3 +10,14 @@
 <td><button class="btn btn-primary" type="button" style="margin-left: 3px;margin-right: 3px;">Edit</button><button class="btn btn-danger" type="button" style="margin-left: 3px;margin-right: 3px;">Delete</button></td>
 
 - yung vehicle trip ticket sa supervisor, kunin na lang yung gui sa dispatcher
+<tr>
+                                                    <td>&lt;name&gt;</td>
+                                                    <td>headmech@gmail.com</td>
+                                                    <td>09123456789</td>
+                                                    <td>09123456789</td>
+                                                    <td><button class="btn btn-primary" type="button" style="background: var(--bs-warning);color: var(--bs-black);">Show</button></td>
+                                                    <td>09123456789</td>
+                                                    <td><button class="btn btn-primary" type="button" style="margin-left: 3px;margin-right: 3px;">Edit</button><button class="btn btn-danger" type="button" style="margin-left: 3px;margin-right: 3px;">Delete</button>
+                                                        <ul class="nav nav-tabs"></ul>
+                                                    </td>
+                                                </tr>
